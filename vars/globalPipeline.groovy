@@ -1,9 +1,13 @@
 def call () {
 	pipeline{
 		stages{
-			stage('Test feature branch'){
+
+			stage ('Test feature branch'){
 				steps{
-					echo 'test'
+						script{
+							echo 'test'
+						}
+					}
 				}
 			}
 		}
