@@ -1,15 +1,10 @@
 def call () 
 {
-	pipeline{
-		stages{
-
-			stage ('Test feature branch'){
-				steps{
-						script{
-							echo 'test'
-						}
-				}
+	node{
+		stage ('Test feature branch'){
+				sh 'echo test'
 			}
 		}
+		
 	}
 }
