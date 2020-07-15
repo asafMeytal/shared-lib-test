@@ -18,11 +18,11 @@ def call ()
 			}
 		}
 		stage ('Promote Release'){
-			if (env.BRANCH_NAME =~ 'release*'){
+			if (env.BRANCH_NAME == 'master'){
 				checkout scm
 				sh 'git checkout master'
-				sh "git merge {$env.BRANCH_NAME}"
-				sh 'git tag -a "v/0.1.0" -m "Merged release branch: "{$env.BRANCH_NAME}" HEAD'
+				sh "git merge {$env.release_branch}" // needs to get the release name branch from the Payload json object
+				sh 'git tag -a "v/0.1.0" -m "Merged release branch: "{$env.release_branch}" HEAD'
 				sh 'git push'
 				sh 'git push origin tag v/0.1.0'
 				sh "git push origin --delete ${release_branch}"
