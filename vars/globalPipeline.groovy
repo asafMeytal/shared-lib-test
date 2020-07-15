@@ -1,8 +1,10 @@
-def call(){
+def call () {
 	pipeline{
 		stage ('check feature_branch'){
 			steps{
-				sh 'test'
+				script{
+					println 'test'
+				}
 			}
 		}
 	
