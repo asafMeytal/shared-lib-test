@@ -13,7 +13,7 @@ def call ()
 			if (env.BRANCH_NAME == 'develop'){
 				checkout scm
 				sh 'git checkout -b release/0.1.0' //need to check on convention
-				sh 'git push --set-upstream release/0.1.0'
+				sh 'git push --set-upstream origin release/0.1.0'
 				echo 'new release branch created'
 			}
 		}
