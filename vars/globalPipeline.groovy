@@ -1,4 +1,5 @@
-def call () {
+def call () 
+{
 	pipeline{
 		stages{
 
@@ -7,7 +8,6 @@ def call () {
 						script{
 							echo 'test'
 						}
-					}
 				}
 			}
 		}
