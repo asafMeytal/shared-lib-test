@@ -2,9 +2,10 @@ def call ()
 {
 	node{
 		stage ('Test feature branch'){
-				sh 'echo test'
+			if (env.BRANCH_NAME =~ 'feature/*'){
+				echo 'test ok'
+			}				
 			
 		}
-		
 	}
 }
